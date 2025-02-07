@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontes Google  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <title>Jogos</title>
+</head>
+<body>
+    <!-- Menu vertical -->
+    <div id="menu-area">
+        <nav class="nav">
+            <img class="logo" src="/img/Abstract-form.png" alt="">
+            <h4 class="menu-title">JOGOS</h4>
+            <a href="#"><img id="link-jogo-velha" src="/img/Jogo_da_velha.png" alt=""></a>
+            <a href="#"><img id="link-memory-game" src="/img/jogo_memoria.png"></a>
+            <div id="player-name-area">
+                <p id="exit-button">Sair</p>
+                <p id="player-name-menu"> <!--Será adicionado com javascript--> </p>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Página principal -->
+     <section id="main-page">
+        <!-- Primeira etapa -->
+        <h1 id="one-text">QUAL O SEU NOME?</h1>
+        <form action="" id="main-form">
+            <label for="player-name">Digite seu nome:</label>
+            <input type="text" id="player-name" checked> <!--Caixa de texto para digitar o nome do usúario-->
+            <button type="button" id="name-button">ENVIAR</button>
+        </form>
+     </section>
+     <!-- Segunda página -->
+     <section id="two-page" class="hidden">
+        <!--Segunda etapa-->
+        <div style="display: grid; grid-template-columns: auto auto;">
+            <h1 id="two-text" style="display: none;">Bem Vindo,</h1>
+            <h1 id="player-name-final"></h1>
+        </div>
+        <button type="button" id="start-button">COMEÇAR O JOGO</button>
+     </section>
+
+    <!-- Área de jogo -->
+     <section id="game_area" class="hidden">
+        <!-- Escolha um jogo -->
+        <h1 id="choice-game">ESCOLHA UM JOGO</h1>
+
+        <!--Jogo da Memória-->
+        <article id="memory-game">
+            <h1 id="memory-title">JOGO DA MEMÓRIA</h1>
+            <section id="difficulty-selection">
+                <h2>Modo de jogo</h2>
+                <ul>
+                    <li>
+                        <label>
+                            <button class="difficulty easy" data-difficulty="easy" aria-label="Modo fácil">Fácil</button>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <button class="difficulty normal" data-difficulty="normal" aria-label="Modo normal">Normal</button>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <button class="difficulty difficult" data-difficulty="difficult" aria-label="Modo difícil">Difícil</button>
+                        </label>
+                    </li>
+                </ul>
+            </section>
+            <section id="memoryGame-area" class="hidden memory-area">
+                <p class="difficulty_title"> <!--Será adicionado com Javascript--> </p>
+                <div class="cards-container">
+                    <!-- Será adicionado com javascript -->
+                </div>
+                <button id="back_button">Voltar</button>
+            </section>
+        </article>
+
+        <!-- Jogo da Velha-->
+        <article id="jogo_da_velha">
+            <h1>JOGO DA VELHA</h1>
+            <div class="square" style="top: 10%; left: 35%;"></div>
+            <div class="square" style="top: 10%; left: 80%;"></div>
+            <div class="square" style="top: 80%; left: 35%;"></div>
+            <div class="square" style="top: 80%; left: 80%;"></div>
+            <h3>Em desenvolvimento!</h3>
+        </article>
+     </section>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- Javascript -->
+    <script language="javascript" src="js.js"></script>     
+</body>
+</html>

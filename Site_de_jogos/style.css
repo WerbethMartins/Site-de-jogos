@@ -1,0 +1,490 @@
+/* Formatação geral */
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    background-color: #62e462f6;
+    height: 100vh;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none !important; /*Ocultando todos os elementos com essa classe*/
+}
+
+/*Formatação menu*/
+#menu-area{
+    perspective: 1000px;
+}
+.logo{
+    border: none !important;
+    width: 65px;
+    height: 65px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 1px #000000;
+    transition: transform 0.5; /*Transição suave*/
+}
+.logo:hover {
+    transform: translateY(-5px)  !important; /*Levanta o logo ao passar o mouse*/
+}
+
+.menu-title{
+    border-bottom: 1px solid #000000;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.nav {
+    display: flex;
+    background: #ffffff;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    width: 150%;
+    height: 100%;
+    margin-left: 30px;
+    box-shadow: 4px 0 5px #000000;
+    
+}
+
+.nav a{
+    color: #000000;
+    padding: 10px;
+    margin: 10px 15px;
+}
+.nav img {
+    border: 1px solid #000000;
+    border-radius: 3px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 2px 2px #000000;
+    transition: transform 0.5s; /*Transição suave*/
+    transform-style: preserve-3d; /*Preserva o estilo 3D*/
+}
+
+.nav img:hover {
+    transform: rotateY(180deg); /*Gira a imagem em 180 graus no eixo Y*/
+}
+
+.nav img::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffcc00; /*Cor do verso da carta*/
+    backface-visibility: hidden; /*Esconde o verso quando não está visível*/
+}
+
+/*Configurando player name area*/
+#player-name-menu {
+    display: none;
+    cursor: pointer;
+    border: 1px solid #000000;
+    font-size: 15px;
+    padding: 2px;
+    box-shadow: 1px 1px 3px #000000;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#player-name-menu:hover {
+    box-shadow: 1px 1px 3px #31f862;
+}
+
+#exit-button {
+    display: none;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    border: 1px solid #000000;
+    background: #ff0000;
+    color: #ffffff;
+    font-size: 8px;
+    padding: 2px;
+    margin-top: 8px;
+    margin-left: 70px;
+    transition: transform 0.5s ease; /*Transição suave*/
+}
+
+#exit-button:hover {
+    transform: translateY(-5px); 
+}
+
+/*Formatação da página principal*/
+#main-page {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 55px;
+    margin-left: 22%;
+    max-width: 700px; /* Largura máxima da seção */
+    max-height: 450px; /* Altura máxima da seção */
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 1); 
+}
+
+#main-page label {
+    font-size: 17px;
+    margin-bottom: 1px;
+    display: inline;
+}
+
+#main-page input {
+    margin-left: 3px;
+    margin-right: 3px;
+    box-shadow: 1px 2px 3px #000000;
+}
+
+#main-page h1 {
+    margin: 2px;
+}
+
+#name-button {
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 1px;
+    box-shadow: 1px 2px 3px #000000;
+    transition: transform 0.5s; /*Transição suave*/
+}
+
+#name-button:hover {
+    transform: translateY(-5px);
+}
+
+
+/*Configuração da segunda página*/
+#two-page {
+    flex: 1;
+    display: flex;
+    opacity: 0;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 200px;
+    margin-left: 22%;
+    max-width: 700px; /* Largura máxima da seção */
+    max-height: 450px; /* Altura máxima da seção */
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 1); 
+}
+
+#player-name-final {
+    margin-left: 1px;
+}
+
+#start-button {
+    cursor: pointer;
+    display: none;
+    background: #31f862;
+    color: #ffffff;
+    margin-top: 10px;
+    padding: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#start-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /*Aumenta a sombra para dar um efeito de elevação */
+}
+            
+/*Formatação Game area*/
+#game_area {
+    flex: 1;
+    display: flex;
+    opacity: 0;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 50px;
+    margin-left: 50%;
+    max-width: 700px; /* Largura máxima da seção */
+    max-height: 450px; /* Altura máxima da seção */
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 1); 
+}
+
+#choice-game {
+    border: 1px solid #000000;
+    box-shadow: 1px 1px 1px #000000;
+    animation: move 5s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes move { /*Animação de movimento */
+    0% { transform: translateX(0);}
+    50% { transform: translateX(calc(25vw - 100px)); box-shadow: 1px 1px 1px #c02424;} /*Move para a direira*/
+    75% { transform: translateX(calc(-9.5vw - 100px));} /*Move para a esquerda*/
+    100%{ transform: translateX(0);}
+    
+}
+
+/*Formatação Memory game*/
+#memory-game {
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+}
+
+#memory-game.active {
+    display: flex;
+}
+
+#memory-title {
+    border: 1px solid #000000;
+    font-size: 20px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px #000000;
+}
+
+#difficulty-selection {
+    display: flex;
+    border: 1px solid #62e462f6;
+    border-radius: 5px;
+    background: #62e462f6;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px; /*Largura maxima do contêiner */
+    height: auto;
+    padding: 50px;
+    margin: 20px auto; /* Centraliza o contêiner horizontalmente */
+    box-shadow: 1px 1px 3px #000000;
+}
+
+#difficulty-selection h2 {
+    border-bottom: 1px solid #000000;
+    font-size: 15px;
+    padding: 5px;
+    margin-bottom: -8px;
+}
+
+#difficulty-selection ul {
+    margin-top: 5px;
+    list-style-type: none;
+}
+
+#difficulty-selection li {
+    border-bottom: 1px solid #000000;
+    width: 100px;
+    padding: 9px;
+    margin: 5px;
+}
+
+.easy {
+    background: none;
+    color: #fff;
+    padding: 5px;
+    transition: all 1s ease;
+}
+.easy:hover {
+    cursor: pointer;
+    background: #ffffff;
+    color: #000000;
+    width: 100px;
+    padding: 8px 34px;
+}
+
+.normal {
+    cursor: pointer;
+    background: none;
+    color: #fff;
+    padding: 5px;
+    transition: all 1s ease;
+}
+
+.normal:hover {
+    background: #ffffff;
+    color: #000000;
+    width: 100px;
+    padding: 8px 24px;
+}
+
+.difficult{
+    cursor: pointer;
+    background: none;
+    color: #fff;
+    padding: 5px;
+    transition: all 1s ease;
+}
+
+.difficult:hover {
+    background: #ffffff;
+    color: #000000;
+    width: 100px;
+    padding: 8px 30px;
+}
+
+/*#difficulty-selection input {
+    cursor: pointer;
+    margin: 2px;
+    padding: 0 15px;
+    box-shadow: 1px 1px 3px #000000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+#difficulty-selection input:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 1px #f83131;
+}
+
+/***********************/
+
+#memoryGame-area {
+    justify-content: center;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.difficulty_title {
+    z-index: 1;
+    position: absolute;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 10px;
+    width: 90%;
+    padding: 10px;
+    top: 14px;
+    left: 32px;
+    box-shadow: 1px 1px 3px #000000;
+}
+
+#back_button {
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    font-size: 8px;
+    padding: 2px;
+    top: 22px;
+    left: 50px;
+    box-shadow: 1px 1px 3px #000000;
+    transition: all 1s ease;
+}
+
+#back_button:hover {
+    background: #31f862;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Configuranção das cartas do jogo*/
+.card  {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: #00ff4c;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+    box-shadow: 1px 1px 5px #000000;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    display: none; /*As imagens estão escondidas inicialmente*/
+    object-fit: cover;
+}
+
+.card.flipped img {
+    display: block; /* Exibe a imagem quando a carta é virada */
+}
+
+.card.flipped {
+    background-color: #fff;
+}
+/*********************************/
+
+/*Formatação jogo da velha*/
+#jogo_da_velha {
+    display: none;
+    z-index: 1;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    text-align: center;
+    height: 100vh; /* Define a altura do contêiner para 100% da altura da viewport */
+    padding-top: 80px;
+}
+
+#jogo_da_velha.active {
+    display: flex;
+}
+
+#jogo_da_velha h1 { /*Configuração do titulo do jogo da velha*/
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 0;
+}
+
+#jogo_da_velha h3 { /* Formatação do titulo do jogo da velha */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 170px 0;
+    text-shadow: 2px 2px 5px #000000;
+    animation: tremor 0.2s infinite;
+    transition: transform 0.1s; /*Transição suave*/
+}
+
+@keyframes tremor { /*Animação para fazer com que o texto trema*/
+    0% { transform: translate(0); }
+    25% { transform: translate(-1.5px, 0); }
+    50% { transform: translate(1.5px, 0); }
+    75% { transform: translate(-1.5px, 0); }
+    100% { transform: translate(0); }            
+}
+
+/*Formatação da animação dos quadrados*/
+.square {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    background: #d10101;
+    width: 50px;
+    height: 50px;
+    animation: blink 2s infinite; /*Aplica à animação a cada 2 segundos*/
+    pointer-events: none; /*Para não bloquear o clique*/
+}
+
+@keyframes blink {
+    0%, 100% {
+      opacity: 1; color: #000000; /*Totalmente visível*/
+    }
+    50% {
+      opacity: 0; color: #ff0000; 
+    }
+  }
+
